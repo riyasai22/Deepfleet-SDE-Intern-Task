@@ -1,43 +1,44 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const productCategoriesRoute = require("./routes/productCategories");
-const productsRoute = require("./routes/products");
-const billRoute = require("./routes/bill");
+// Import required dependencies
+const express = require("express"); // Express.js framework for building web applications
+const mongoose = require("mongoose"); // Mongoose to work with MongoDB
+const bodyParser = require("body-parser"); // Middleware for parsing request data
+const cors = require("cors"); // Middleware for handling Cross-Origin Resource Sharing
+const productCategoriesRoute = require("./routes/productCategories"); // Import routes for product categories
+const productsRoute = require("./routes/products"); // Import routes for products
+const billRoute = require("./routes/bill"); // Import routes for bills
 
-const app = express();
+const app = express(); // Initialize the Express application
 
-app.use(bodyParser.json());
-app.use(cors());
+// Middleware setup
+app.use(bodyParser.json()); // Use the body-parser middleware to parse JSON data in requests
+app.use(cors()); // Enable CORS to allow cross-origin requests
 
-// Define your routes next
-// const gstRatesRoute = require("./routes/gstRates");
-// const salesRoute = require("./routes/sales");
 // MongoDB Connection
 mongoose.connect(
+  // Connect to MongoDB using Mongoose
   "mongodb+srv://username:password@cluster0.jmbhoqf.mongodb.net/gst?retryWrites=true&w=majority",
   {
-    useNewUrlParser: true,
+    useNewUrlParser: true, // MongoDB connection options
     useUnifiedTopology: true,
   }
 );
 
-const db = mongoose.connection;
+const db = mongoose.connection; // Create a MongoDB connection instance
 
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// Handle MongoDB connection events
+db.on("error", console.error.bind(console, "MongoDB connection error:")); // On MongoDB connection error
 db.once("open", () => {
+  // When MongoDB connection is open
   console.log("Connected to MongoDB");
 });
 
-app.use("/api/productCategories", productCategoriesRoute);
-app.use("/api/product", productsRoute);
-app.use("/api/bill", billRoute);
+// Define routes for different parts of the application
+app.use("/api/productCategories", productCategoriesRoute); // Route for product categories
+app.use("/api/product", productsRoute); // Route for products
+app.use("/api/bill", billRoute); // Route for bills
 
-// app.use("/gstRates", gstRatesRoute);
-// app.use("/sales", salesRoute);
-
-const PORT = process.env.PORT || 5000;
+// Set up the server to listen on a port
+const PORT = process.env.PORT || 5000; // Use the environment's port or 5000 as the default
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`); // Print a message when the server is running
 });
