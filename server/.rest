@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/localhost:5000/api/productCategories
+Content-Type: application/json
+
+{
+    "name": "Utilities",
+}

@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800");
+
+.dashboard_container {
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin: auto;
+  width: 80%;
+  font-family: "Montserrat";
+}
+
+.add_prod_category,
+.add_gst_rate,
+.add_products {
+  cursor: pointer;
+  margin: 10px 0;
+  color: #007bff;
+}
+
+.popup_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.text_field {
+  margin: 10px 0;
+}
+
+.select-field {
+  margin: 10px 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Style labels */
+label {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-top: 10px;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+table {
+  margin: 20px 0;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+p {
+  cursor: pointer;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.bill {
+  margin-top: 20px;
+}
+
+.bill h2 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.bill table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.bill th,
+.bill td {
+  border: 1px solid #000;
+  padding: 5px;
+  text-align: left;
+}
+
+.bill th {
+  background-color: #f2f2f2;
+}
+
+.bill p {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+table thead {
+  background-color: #f2f2f2;
+}
+
+table th {
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+/* Style for the final price */
+.final-price {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px auto;
+}
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.box {
+  background: white;
+  width: 28%;
+  padding: 20px;
+  font-weight: 600;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.select-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  font-family: "Montserrat";
+}
+
+/* Style for the option items */
+.select-field select option {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff; /* Background color for unselected items */
+  color: #333; /* Text color for unselected items */
+}
+
+/* Style for the selected option */
+.select-field select option:checked {
+  background-color: #007bff; /* Background color for selected item */
+  color: #fff; /* Text color for selected item */
+}
